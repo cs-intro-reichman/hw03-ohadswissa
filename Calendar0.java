@@ -54,7 +54,7 @@ public class Calendar0 {
 		}
 		else 
 		{
-			System.out.println(a+ " is a common");
+			System.out.println(a+ " is a common year");
 		}
 		System.out.println("month 1 has 31 days");
 		System.out.println("month 2 has "+nDaysInMonth(2,a)+" days");
