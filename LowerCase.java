@@ -12,6 +12,23 @@ public class LowerCase {
     */
     public static String lowerCase(String s) {
         // Replace the following statement with your code
-        return null;
+        String bigger = "";
+        int i = 0;
+        while (i < s.length())
+        {
+           char ch = s.charAt(i);
+           if ((ch >= 65) && (ch <= 90))
+        {
+           bigger += (char)(ch + 32);
+        }
+        else 
+        {
+            bigger = bigger + ch;
+        }
+      
+        i++;
+
+        }
+        return bigger; 
     }
 }
