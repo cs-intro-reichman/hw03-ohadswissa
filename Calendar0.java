@@ -56,18 +56,18 @@ public class Calendar0 {
 		{
 			System.out.println(a+ " is a common year");
 		}
-		System.out.println("month 1 has 31 days");
-		System.out.println("month 2 has "+nDaysInMonth(2,a)+" days");
-		System.out.println("month 3 has 31 days");
-		System.out.println("month 4 has 30 days");
-		System.out.println("month 5 has 31 days");
-		System.out.println("month 6 has 30 days");
-		System.out.println("month 7 has 31 days");
-		System.out.println("month 8 has 31 days");
-		System.out.println("month 9 has 30 days");
-		System.out.println("month 10 has 31 days");
-		System.out.println("month 11 has 30 days");
-		System.out.println("month 12 has 31 days");
+		System.out.println("Month 1 has 31 days");
+		System.out.println("Month 2 has "+nDaysInMonth(2,a)+" days");
+		System.out.println("Month 3 has 31 days");
+		System.out.println("Month 4 has 30 days");
+		System.out.println("Month 5 has 31 days");
+		System.out.println("Month 6 has 30 days");
+		System.out.println("Month 7 has 31 days");
+		System.out.println("Month 8 has 31 days");
+		System.out.println("Month 9 has 30 days");
+		System.out.println("Month 10 has 31 days");
+		System.out.println("Month 11 has 30 days");
+		System.out.println("Month 12 has 31 days");
 	}
 }
 
