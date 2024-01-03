@@ -97,8 +97,7 @@ public class LoanCalc {
 	*/
 	private static double endBalance(double loan, double rate, int n, double payment) {
 		
-		double money = loan;
-    	for ( int i=0; i <= n ;i++)
+    	for ( int i=1; i <= n ;i++)
     	{
     		loan = loan - payment;
     		loan = loan * (1+(rate/100));
