@@ -2,7 +2,7 @@
 public class uniquechars {
     public static void main(String[] args) {  
         String str = args[0];
-        System.out.println(uniqueChars(str));
+        System.out.println(uniquechars(str));
     }
 
     /**
@@ -10,7 +10,7 @@ public class uniquechars {
      * except that all the duplicate characters are removed,
      * unless they are space characters.
      */
-    public static String uniqueChars(String s) {
+    public static String uniquechars(String s) {
         // Replace the following statement with your code
          String r = "" + (s.charAt(0));
          int i = 1;

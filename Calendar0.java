@@ -2,14 +2,27 @@
  * Prints the calendars of all the years in the 20th century.
  */
 public class Calendar0 {	
+    // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
-	static int year = 0;;
-	static int dayOfWeek = 1;    
-	static int nDaysInMonth = 31; 
-	//function that gets an unt argument and a year argument and gives back the number of the days in this month
+	static int year;
+	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
+	static int nDaysInMonth = 31; // Number of days in January
+	// Returns true if the given year is a leap year, false otherwise.
+	public static boolean isLeapYear(int year) {
+	   if ((year % 400 == 0) || (year % 4 ==0))
+	   {
+	   	return true; 
+	   }
+		return false;
+	}
+	 
+	// Returns the number of days in the given month and year.
+	// April, June, September, and November have 30 days each.
+	// February has 28 days in a common year, and 29 days in a leap year.
+	// All the other months have 31 days.
 	public static int nDaysInMonth(int month, int year) {
-
+		// Replace the following statement with your code
 		boolean leap = isLeapYear(year); 
 			if (month == 1) return 31;
 			if (month ==2)
@@ -29,134 +42,38 @@ public class Calendar0 {
 			if (month == 12) return 31;
 			return 0;
 			}
-//function that prints a date in the right order
-	private static void printDate() {
-            System.out.println(dayOfMonth + "/" + month + "/" + year);
-    }
 		
-//gets back if a year is a loop year
-	public static boolean isLeapYear(int year) {
-	   if ((year % 400 == 0) || (year % 4 ==0))
-	   {
-	   	return true; 
-	   }
-		return false;
-	}
-//advane parameters at each end of month 
-	private static void advance() {
-		
-		if (month == 12) 
-		{
-		  dayOfMonth = 1;   
-	      month = 1;
-	      year += 1;
-	      dayOfWeek += 1;     
-	      nDaysInMonth = 31; 
-	      return;
-		}
-		if (month == 1)
-		{
-		  dayOfMonth = 1;   
-	      month = 2;
-	      dayOfWeek += 1;     
-	      nDaysInMonth = nDaysInMonth(2,year); 
-	       return;
-		}
-		if (month == 2)
-		{
-          dayOfMonth = 1;   
-	      month += 1;
-	      dayOfWeek +=1;     
-	      nDaysInMonth = 31; 
-	       return;
-		}
 
-	   if ((nDaysInMonth(month,year) == 30) || (month==7))
-		{
-		  dayOfMonth = 1;   
-	      month += 1;
-	      dayOfWeek += 1;     
-	      nDaysInMonth = 31; 
-	       return;
-	    }
-        if (nDaysInMonth(month,year) == 31)
-		{
-	      dayOfMonth = 1;   
-	      month += 1;
-	      dayOfWeek +=1;     
-	      nDaysInMonth = 30;
-	       return; 
-		}
-	}
 	public static void main(String args []) {
 
 		int a = Integer.parseInt(args[0]);
-		year = a;
-		while (year < a+1)
-	{
-		if (nDaysInMonth(month,year) == 31) 
+	
+		if ( isLeapYear(a) == true)
 		{
-			printDate();
-			dayOfWeek ++;
-			dayOfMonth ++;
-			if (dayOfWeek == 8)
-			  {
-				dayOfWeek = 1;
-			  }
-			if (dayOfMonth == 32)
-			  {
-				advance();
-			  }
+			System.out.println(a+ " is a leap year");
 		}
-		if (nDaysInMonth(month,year) == 30) 
+		else 
 		{
-			printDate();
-			dayOfWeek ++;
-			dayOfMonth ++;
-
-			if (dayOfWeek == 8)
-			{
-				dayOfWeek = 1;
-			}
-			if (dayOfMonth == 31)
-			{
-				advance();
-			}
+			System.out.println(a+ " is a common");
 		}
-		if (month == 2)
-		{
-			printDate();
-			dayOfWeek ++;
-			dayOfMonth ++;
-			if (dayOfWeek == 8)
-			{
-				dayOfWeek = 1;
-			}
-			if ((isLeapYear(year) == false) && (dayOfMonth == 29))
-			{
-				advance();
-			}
-			if ((isLeapYear(year) == true) && (dayOfMonth == 30)) 
-			{
-				advance();
-			}
-			
-		
+		System.out.println("month 1 has 31 days");
+		System.out.println("month 2 has "+nDaysInMonth(2,a)+" days");
+		System.out.println("month 3 has 31 days");
+		System.out.println("month 4 has 30 days");
+		System.out.println("month 5 has 31 days");
+		System.out.println("month 6 has 30 days");
+		System.out.println("month 7 has 31 days");
+		System.out.println("month 8 has 31 days");
+		System.out.println("month 9 has 30 days");
+		System.out.println("month 10 has 31 days");
+		System.out.println("month 11 has 30 days");
+		System.out.println("month 12 has 31 days");
 	}
 }
-}
-}
 
 
 
 
-		
+		 
+   
 	
-
-
-
-	 
-		
-	
-	
-	 
