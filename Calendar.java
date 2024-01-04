@@ -31,7 +31,9 @@ public class Calendar {
 			}
 //function that prints a date in the right order
 	private static void printDate() {
-            System.out.println(dayOfMonth + "/" + month + "/" + year);
+		if (dayOfWeek == 7)
+            System.out.println(dayOfMonth + "/" + month + "/" + year+ " Sunday");
+        else   System.out.println(dayOfMonth + "/" + month + "/" + year);
     }
 		
 //gets back if a year is a loop year
@@ -96,13 +98,15 @@ public class Calendar {
 	{
 		if (nDaysInMonth(month,year) == 31) 
 		{
+
 			printDate();
-			dayOfWeek ++;
-			dayOfMonth ++;
-			if (dayOfWeek == 8)
+			if (dayOfWeek == 7)
 			  {
 				dayOfWeek = 1;
 			  }
+			 else dayOfWeek ++;
+			dayOfMonth ++;
+			
 			if (dayOfMonth == 32)
 			  {
 				advance();
@@ -111,7 +115,12 @@ public class Calendar {
 		if (nDaysInMonth(month,year) == 30) 
 		{
 			printDate();
-			dayOfWeek ++;
+			if (dayOfWeek == 7)
+			  {
+				dayOfWeek = 1;
+			  }
+			 else dayOfWeek ++;
+			
 			dayOfMonth ++;
 
 			if (dayOfWeek == 8)
@@ -126,7 +135,12 @@ public class Calendar {
 		if (month == 2)
 		{
 			printDate();
-			dayOfWeek ++;
+			if (dayOfWeek == 7)
+			  {
+				dayOfWeek = 1;
+			  }
+			 else dayOfWeek ++;
+			
 			dayOfMonth ++;
 			if (dayOfWeek == 8)
 			{
