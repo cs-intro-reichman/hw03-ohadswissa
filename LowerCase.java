@@ -1,8 +1,8 @@
 /** String processing exercise 1. */
-public class lowercase {
+public class LowerCase{
     public static void main(String[] args) {  
         String str = args[0];
-        System.out.println(lowercase(str));
+        System.out.println(LowerCase(str));
     }
 
    /**
@@ -10,7 +10,7 @@ public class lowercase {
     * except that all the upper-case letters are converted to lower-case letters.
     * Non-letter characters are left as is.
     */
-    public static String lowercase(String s) {
+    public static String LowerCase(String s) {
         // Replace the following statement with your code
         String bigger = "";
         int i = 0;
