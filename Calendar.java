@@ -1,11 +1,10 @@
-/** 
- * Prints the calendars of all the years in the 20th century.
- */
+
+ //uses a couple of functions for pritning the given year calendar and all the sundays
 public class Calendar {	
 	static int dayOfMonth = 1;   
 	static int month = 1;
-	static int year = 0;;
-	static int dayOfWeek = 1;    
+	static int year = 1900;;
+	static int dayOfWeek = 2;    
 	static int nDaysInMonth = 31; 
 	//function that gets an unt argument and a year argument and gives back the number of the days in this month
 	public static int nDaysInMonth(int month, int year) {
@@ -47,65 +46,40 @@ public class Calendar {
 //advane parameters at each end of month 
 	private static void advance() {
 		
-		if (month == 12) 
-		{
 		  dayOfMonth = 1;   
-	      month = 1;
-	      year += 1;
-	      dayOfWeek += 1;     
-	      nDaysInMonth = 31; 
+	      if (month == 12)
+	      {
+	      	nDaysInMonth = 31;
+	      	month = 1;
+	      	year ++;
+	      } 
+	     // if  (dayOfWeek !=1) dayOfWeek += 1;     
+	     else 
+	     {
+	     	nDaysInMonth = nDaysInMonth(month+1,year);
+	     	month ++;
+	     }
+	     	 
 	      return;
 		}
-		if (month == 1)
-		{
-		  dayOfMonth = 1;   
-	      month = 2;
-	      dayOfWeek += 1;     
-	      nDaysInMonth = nDaysInMonth(2,year); 
-	       return;
-		}
-		if (month == 2)
-		{
-          dayOfMonth = 1;   
-	      month += 1;
-	      dayOfWeek +=1;     
-	      nDaysInMonth = 31; 
-	       return;
-		}
-
-	   if ((nDaysInMonth(month,year) == 30) || (month==7))
-		{
-		  dayOfMonth = 1;   
-	      month += 1;
-	      dayOfWeek += 1;     
-	      nDaysInMonth = 31; 
-	       return;
-	    }
-        if (nDaysInMonth(month,year) == 31)
-		{
-	      dayOfMonth = 1;   
-	      month += 1;
-	      dayOfWeek +=1;     
-	      nDaysInMonth = 30;
-	       return; 
-		}
-	}
 	public static void main(String args []) {
 
-		int a = Integer.parseInt(args[0]);
-		year = a;
-		while (year < a+1)
+		int y = Integer.parseInt(args[0]);
+		while (year < y+1)
 	{
 		if (nDaysInMonth(month,year) == 31) 
 		{
-
-			printDate();
+			if (year == y)
+			{
+			 printDate();
+			}
+  
 			if (dayOfWeek == 7)
 			  {
 				dayOfWeek = 1;
 			  }
 			 else dayOfWeek ++;
-			dayOfMonth ++;
+			 dayOfMonth ++;
 			
 			if (dayOfMonth == 32)
 			  {
@@ -114,7 +88,10 @@ public class Calendar {
 		}
 		if (nDaysInMonth(month,year) == 30) 
 		{
-			printDate();
+			if (year == y)
+			{
+			 printDate();
+			}
 			if (dayOfWeek == 7)
 			  {
 				dayOfWeek = 1;
@@ -123,18 +100,18 @@ public class Calendar {
 			
 			dayOfMonth ++;
 
-			if (dayOfWeek == 8)
-			{
-				dayOfWeek = 1;
-			}
 			if (dayOfMonth == 31)
 			{
 				advance();
 			}
 		}
+
 		if (month == 2)
 		{
-			printDate();
+			if (year == y)
+			{
+			 printDate();
+			}
 			if (dayOfWeek == 7)
 			  {
 				dayOfWeek = 1;
@@ -142,10 +119,6 @@ public class Calendar {
 			 else dayOfWeek ++;
 			
 			dayOfMonth ++;
-			if (dayOfWeek == 8)
-			{
-				dayOfWeek = 1;
-			}
 			if ((isLeapYear(year) == false) && (dayOfMonth == 29))
 			{
 				advance();
