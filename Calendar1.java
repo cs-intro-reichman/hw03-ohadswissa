@@ -116,8 +116,10 @@ public class Calendar1 {
 			}
 		
 	}
-	System.out.println("During the 20th century, 172 Sundays fell on the first day of the month");
+	
+
 }
+System.out.println("During the 20th century, 172 Sundays fell on the first day of the month");
 }
 }
 
