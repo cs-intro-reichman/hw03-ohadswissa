@@ -4,7 +4,7 @@
 public class Calendar1 {	
 	static int dayOfMonth = 1;   
 	static int month = 1;
-	static int year = 0;;
+	static int year = 1900;;
 	static int dayOfWeek = 1;    
 	static int nDaysInMonth = 31; 
 	//function that gets an unt argument and a year argument and gives back the number of the days in this month
