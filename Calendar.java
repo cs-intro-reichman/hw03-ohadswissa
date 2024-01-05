@@ -37,11 +37,10 @@ public class Calendar {
 		
 //gets back if a year is a loop year
 	public static boolean isLeapYear(int year) {
-	   if ((year % 400 == 0) || (year % 4 ==0))
-	   {
-	   	return true; 
-	   }
-		return false;
+		boolean isleap;
+	 isleap =  ((year % 400) == 0);
+	 isleap = isleap || (((year % 4 ==0) && ((year % 100)!=0)));
+	 return isleap;
 	}
 //advane parameters at each end of month 
 	private static void advance() {
