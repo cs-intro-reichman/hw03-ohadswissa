@@ -12,12 +12,6 @@ public class UniqueChars {
      */
     public static String UniqueChars(String s) {
         // Replace the following statement with your code
-
-        /* 
-            # feedback: 
-            Please delete no relevant comments from your code
-            Use correct indentation, for better code readability.
-        */
          String r = "" + (s.charAt(0));
          int i = 1;
         while (i < s.length())
